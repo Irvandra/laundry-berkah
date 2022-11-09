@@ -20,7 +20,10 @@
                         <a class="nav-link" href="/about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/pemasukan">Keuangan</a>
+                        <a class="nav-link" href="/pemasukan">Pemasukan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pengeluaran">Pengeluaran</a>
                     </li>
                 </ul>
             </div>

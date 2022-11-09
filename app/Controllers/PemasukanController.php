@@ -4,85 +4,101 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Pemasukan;
+use App\Models\Users;
 
 class PemasukanController extends BaseController
 {
+    protected $pemasukanModel;
+    protected $usersModel;
+
+    public function __construct()
+    {
+        $this->pemasukanModel = new Pemasukan();
+        $this->usersModel = new Users();
+    }
+
     public function index()
     {
-        $pemasukanModel = new Pemasukan();
-        $pemasukan = $pemasukanModel->findAll();
+        $pemasukan = $this->pemasukanModel->get_pemasukan_list();
 
         $data = [
             'title' => 'Pemasukan',
-            'pemasukan' => $pemasukan
+            'pemasukan' => $pemasukan,
         ];
 
-        return view('templates/header', $data)
-            . view('pemasukan/list', $data)
-            . view('templates/footer');
+        // return var_dump($data);
+        return view('pemasukan/list', $data);
     }
 
     public function create()
     {
+        $users = $this->usersModel->findAll();
+
         $data = [
-            'title' => 'Create Pemasukan'
+            'title' => 'Create Pemasukan',
+            'users' => $users
         ];
 
-        return view('templates/header', $data)
-            . view('pemasukan/create')
-            . view('templates/footer');
+        return view('pemasukan/create', $data);
     }
 
     public function store()
     {
         if(!$this->validate([
+            'tanggal_pemasukan' => 'required',
             'jumlah_pemasukan' => 'required|string',
+            'cashier_id' => 'required',
         ])) {
-            return redirect()->to('/create');
+            return redirect()->to('/create_pemasukan');
         }
-        $pemasukanModel = new Pemasukan();
+
         $data = [
+            'tanggal_pemasukan' => $this->request->getPost('tanggal_pemasukan'),
             'jumlah_pemasukan' => $this->request->getPost('jumlah_pemasukan'),
+            'cashier_id' => $this->request->getPost('cashier_id'),
         ];
-        $pemasukanModel->save($data);
+        $this->pemasukanModel->save($data);
 
         return redirect()->to('/pemasukan');
     }
 
     public function edit($id)
     {
-        $pemasukanModel = new Pemasukan();
-        $pemasukan = $pemasukanModel->find($id);
+        $pemasukan = $this->pemasukanModel->find($id);
+        // $pemasukan = $this->pemasukanModel->get_pemasukan_edit($id);
+        // $users = $this->usersModel->findAll();
 
         $data = [
-            'title' => 'Edit Pemasukan'
+            'title' => 'Edit Pemasukan',
+            'pemasukan' => $pemasukan,
+            // 'users' => $users
         ];
 
-        return view('templates/header', $data)
-            . view('pemasukan/edit', $pemasukan)
-            . view('templates/footer');
+        // return var_dump($data);
+        return view('pemasukan/edit', $data);
     }
 
     public function update($id)
     {
         if(!$this->validate([
+            'tanggal_pemasukan' => 'required',
             'jumlah_pemasukan' => 'required|string',
         ])) {
-            return redirect()->to('/edit'.$id);
+            return redirect()->to('/edit_pemasukan/'.$id);
         }
-        $pemasukanModel = new Pemasukan();
+
         $data = [
+            'tanggal_pemasukan' => $this->request->getVar('tanggal_pemasukan'),
             'jumlah_pemasukan' => $this->request->getVar('jumlah_pemasukan'),
         ];
-        $pemasukanModel->update($id, $data);
+        $this->pemasukanModel->update($id, $data);
 
         return redirect()->to('/pemasukan');
     }
 
     public function delete($id)
     {
-        $pemasukanModel = new Pemasukan();
-        $pemasukanModel->delete($id);
+        $this->pemasukanModel->delete($id);
         return redirect()->to('/pemasukan');
     }
 }

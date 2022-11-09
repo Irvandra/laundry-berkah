@@ -4,13 +4,13 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Pemasukan extends Model
+class Pengeluaran extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'pemasukan';
-    protected $primaryKey       = 'id_pemasukan';
+    protected $table            = 'pengeluaran';
+    protected $primaryKey       = 'id_pengeluaran';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = ['tanggal_pemasukan', 'jumlah_pemasukan', 'cashier_id'];
+    protected $allowedFields    = ['tanggal_pengeluaran', 'jumlah_pengeluaran', 'employee_id'];
 
     // Dates
     protected $useTimestamps = true;
@@ -35,18 +35,4 @@ class Pemasukan extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-
-    public function get_pemasukan_list()
-    {
-        return $this->db->table('pemasukan')
-            ->join('users', 'pemasukan.cashier_id=users.id')
-            ->get()->getResultObject();
-    }
-
-    public function get_pemasukan_edit($id)
-    {
-        return $this->db->table('pemasukan')
-            ->join('users', 'pemasukan.cashier_id=users.id')
-            ->get()->getResult();
-    }
 }

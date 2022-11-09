@@ -4,21 +4,21 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreatePemasukanTable extends Migration
+class CreatePengeluaranTable extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_pemasukan' => [
+            'id_pengeluaran' => [
                 'type'           => 'INT',
                 'constraint'     => 5,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'tanggal_pemasukan' => [
+            'tanggal_pengeluaran' => [
                 'type'       => 'DATE',
             ],
-            'jumlah_pemasukan' => [
+            'jumlah_pengeluaran' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
@@ -30,18 +30,18 @@ class CreatePemasukanTable extends Migration
                 'type'       => 'DATETIME',
                 'null'       => 'true',
             ],
-            'cashier_id' => [
+            'employee_id' => [
                 'type'           => 'INT',
                 'constraint'     => 5,
                 'unsigned'       => true,
             ],
         ]);
-        $this->forge->addKey('id_pemasukan', true);
-        $this->forge->createTable('pemasukan');
+        $this->forge->addKey('id_pengeluaran', true);
+        $this->forge->createTable('pengeluaran');
     }
 
     public function down()
     {
-        $this->forge->dropTable('pemasukan');
+        $this->forge->dropTable('pengeluaran');
     }
 }

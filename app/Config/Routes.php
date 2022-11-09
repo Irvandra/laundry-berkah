@@ -37,11 +37,17 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/pemasukan', 'PemasukanController::index');
-$routes->get('/create', 'PemasukanController::create');
-$routes->post('/store', 'PemasukanController::store');
-$routes->get('/edit/(:num)', 'PemasukanController::edit/$1');
-$routes->post('/update/(:num)', 'PemasukanController::update/$1');
-$routes->delete('/delete/(:num)', 'PemasukanController::delete/$1');
+$routes->get('/create_pemasukan', 'PemasukanController::create');
+$routes->post('/store_pemasukan', 'PemasukanController::store');
+$routes->get('/edit_pemasukan/(:num)', 'PemasukanController::edit/$1');
+$routes->post('/update_pemasukan/(:num)', 'PemasukanController::update/$1');
+$routes->delete('/delete_pemasukan/(:num)', 'PemasukanController::delete/$1');
+$routes->get('/pengeluaran', 'PengeluaranController::index');
+$routes->get('/create_pengeluaran', 'PengeluaranController::create');
+$routes->post('/store_pengeluaran', 'PengeluaranController::store');
+$routes->get('/edit_pengeluaran/(:num)', 'PengeluaranController::edit/$1');
+$routes->post('/update_pengeluaran/(:num)', 'PengeluaranController::update/$1');
+$routes->delete('/delete_pengeluaran/(:num)', 'PengeluaranController::delete/$1');
 // $routes->get('/index', 'Pages::index');
 // $routes->get('(:any)', 'Pages::view/$1');
 
