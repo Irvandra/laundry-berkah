@@ -19,10 +19,6 @@ class CreateNotaTable extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'paket_layanan' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
             'berat_orderan' => [
                 'type'       => 'INT',
                 'constraint' => '9',
@@ -34,10 +30,14 @@ class CreateNotaTable extends Migration
             'delivery' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '5',
+                'null' => 'true',
             ],
             'status_order' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '10',
+            ],
+            'tanggal_nota' => [
+                'type'       => 'DATE',
             ],
             'created_at' => [
                 'type'       => 'DATETIME',
@@ -47,8 +47,8 @@ class CreateNotaTable extends Migration
                 'type'       => 'DATETIME',
                 'null'       => 'true',
             ],
-            
-            
+
+
         ]);
         $this->forge->addKey('id_orderan', true);
         $this->forge->createTable('nota');

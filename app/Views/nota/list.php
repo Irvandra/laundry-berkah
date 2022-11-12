@@ -7,7 +7,6 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nama Pelanggan</th>
-                <th scope="col">Paket Layanan</th>
                 <th scope="col">Berat (Kg)</th>
                 <th scope="col">Delivery</th>
                 <th scope="col">Total Tagihan</th>
@@ -21,7 +20,6 @@
             <tr>
                 <th scope="row"><?= $no ?></th>
                 <td><?= $nt->nama_pelanggan ?></td>
-                <td><?= $nt->paket_layanan ?></td>
                 <td><?= $nt->berat_orderan?></td>
                 <td><?= $nt->delivery?></td>
                 <td><?= $nt->jumlah_pemasukan?></td>

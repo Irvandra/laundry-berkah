@@ -43,18 +43,16 @@ class NotaController extends BaseController
     {
         if (!$this->validate([
             'nama_pelanggan' => 'required',
-            'jenis_pemasukan' => 'required|string',
             // 'cashier_id' => 'required',
         ])) {
-            return redirect()->to('/nota');
+            return redirect()->to('/create_nota');
         }
-
-        $total_tagihan = 'berat_orderan' * 3500;
+        $berat_orderan = $this->request->getPost('berat_orderan');
+        $total_tagihan = $berat_orderan * 3500;
 
         $data = [
             'nama_pelanggan' => $this->request->getPost('nama_pelanggan'),
-            'jenis_pemasukan' => $this->request->getPost('jenis_pemasukan'),
-            'berat_orderan' => $this->request->getPost('berat_orderan'),
+            'berat_orderan' => $berat_orderan,
             'total_tagihan' => $total_tagihan,
             'delivery' => $this->request->getPost('delivery'),
 
@@ -85,21 +83,21 @@ class NotaController extends BaseController
     {
         if (!$this->validate([
             'nama_pelanggan' => 'required',
-            'jenis_pemasukan' => 'required|string',
+            // 'jenis_pemasukan' => 'required|string',
         ])) {
             return redirect()->to('/edit_nota/'. $id);
         }
 
         $data = [
-            'tanggal_pemasukan' => $this->request->getVar('tanggal_pemasukan'),
-            'jumlah_pemasukan' => $this->request->getVar('jumlah_pemasukan'),
+            'nama_pelanggan' => $this->request->getVar('nama_pelanggan'),
+            'berat_orderan' => $this->request->getVar('berat_orderan'),
+            // 'total_tagihan' => $this->request->getVar('total_tagihan'),
+            'delivery' => $this->request->getVar('delivery'),
         ];
-        $this->pemasukanModel->update($id, $data);
+        $this->notaModel->update($id, $data);
 
-        return redirect()->to('/pemasukan');
+        return redirect()->to('/nota');
     }
-
-
 
     public function delete($id)
     {

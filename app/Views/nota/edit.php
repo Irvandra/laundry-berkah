@@ -2,12 +2,12 @@
 <?= $this->section('content') ?>
 <div class="p-4">
     <!-- halaman tambah nota -->
-    <form action="/store_nota" method="post">
+    <form action="/update_nota/<?= $nota['id_orderan'] ?>" method="post">
         <div class="mb-3">
             <label for="nama_pelanggan" class="form-label">Nama Pelanggan</label>
             <input type="text" name="nama_pelanggan" class="form-control" id="nama_pelanggan" value="<?= $nota['nama_pelanggan'] ?>">
         </div>
-        <div class="mb-3">
+        <!-- <div class="mb-3">
             <label for="jenis_pemasukan" class="form-label">Paket Layanan</label>
             <select class="custom-select" id="jenis_pemasukan" >
                 <option selected>Pilih Paket Layanan...</option>
@@ -15,7 +15,7 @@
                 <option value="2">Cuci Setrika</option>
                 <option value="3">Cuci </option>
             </select>
-        </div>
+        </div> -->
         <div class="mb-3">
             <label for="berat_orderan" class="form-label">Berat(Kg)</label>
             <input type="text" name="berat_orderan" class="form-control" id="berat_orderan" value="<?= $nota['berat_orderan'] ?>">
