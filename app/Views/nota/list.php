@@ -1,7 +1,7 @@
 <?= $this->extend('template') ?>
 <?= $this->section('content') ?>
 <div class="p-4">
-    <!-- <a href="/create_pemasukan" type="button" class="btn btn-primary mb-3">Tambah</a> -->
+    <a href="/create_nota" type="button" class="btn btn-primary mb-3">Tambah</a>
     <table class="table table-striped">
         <thead>
             <tr>
