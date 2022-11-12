@@ -9,18 +9,35 @@ class CreateNotaTable extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id_pengeluaran' => [
+            'id_orderan' => [
                 'type'           => 'INT',
                 'constraint'     => 5,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'tanggal_pengeluaran' => [
-                'type'       => 'DATE',
-            ],
-            'jumlah_pengeluaran' => [
+            'nama_pelanggan' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
+            ],
+            'paket_layanan' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'berat_orderan' => [
+                'type'       => 'INT',
+                'constraint' => '9',
+            ],
+            'jumlah_pemasukan' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'delivery' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '5',
+            ],
+            'status_order' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '10',
             ],
             'created_at' => [
                 'type'       => 'DATETIME',
@@ -30,14 +47,11 @@ class CreateNotaTable extends Migration
                 'type'       => 'DATETIME',
                 'null'       => 'true',
             ],
-            'employee_id' => [
-                'type'           => 'INT',
-                'constraint'     => 5,
-                'unsigned'       => true,
-            ],
+            
+            
         ]);
-        $this->forge->addKey('id_pengeluaran', true);
-        $this->forge->createTable('pengeluaran');
+        $this->forge->addKey('id_orderan', true);
+        $this->forge->createTable('nota');
     }
 
     public function down()

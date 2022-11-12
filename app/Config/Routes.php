@@ -48,7 +48,7 @@ $routes->post('/store_pengeluaran', 'PengeluaranController::store');
 $routes->get('/edit_pengeluaran/(:num)', 'PengeluaranController::edit/$1');
 $routes->post('/update_pengeluaran/(:num)', 'PengeluaranController::update/$1');
 $routes->delete('/delete_pengeluaran/(:num)', 'PengeluaranController::delete/$1');
-$routes->get('nota', 'NotaController::index');
+$routes->get('/nota', 'NotaController::index');
 // $routes->get('/index', 'Pages::index');
 // $routes->get('(:any)', 'Pages::view/$1');
 
