@@ -30,8 +30,8 @@
                 
                 <td>
                     <div class="d-flex">
-                        <a class="btn btn-warning mr-3" href="/edit_pemasukan/<?= $nt->id_orderan ?>">Edit</a>
-                        <form action="/delete_pemasukan/<?= $nt->id_orderan ?>" method="post">
+                        <a class="btn btn-warning mr-3" href="/edit_nota/<?= $nt->id_orderan ?>">Edit</a>
+                        <form action="/delete_nota/<?= $nt->id_orderan ?>" method="post">
                         <input type="hidden" name="_method" value="DELETE">
                         <button type="submit" class="btn btn-danger">Delete</button>
                         </form>

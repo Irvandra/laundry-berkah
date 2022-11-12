@@ -14,26 +14,28 @@
             </tr>
         </thead>
         <tbody>
-            <?php $no = 1; foreach($pemasukan as $masuk) : ?>
-            <tr>
-                <th scope="row"><?= $no ?></th>
-                <td><?= $masuk->id_pemasukan ?></td>
-                <td><?= $masuk->tanggal_pemasukan ?></td>
-                <td><?= $masuk->jumlah_pemasukan ?></td>
-                <td><?= $masuk->username ?></td>
-                
-                <td>
-                    <div class="d-flex">
-                        <a class="btn btn-warning mr-3" href="/edit_pemasukan/<?= $masuk->id_pemasukan ?>">Edit</a>
-                        <form action="/delete_pemasukan/<?= $masuk->id_pemasukan ?>" method="post">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
-                    </div>
-                </td>
-            </tr>
-            <?php $no++; endforeach;?>
+            <?php $no = 1;
+            foreach ($pemasukan as $masuk) : ?>
+                <tr>
+                    <th scope="row"><?= $no ?></th>
+                    <td><?= $masuk->id_pemasukan ?></td>
+                    <td><?= $masuk->tanggal_pemasukan ?></td>
+                    <td><?= $masuk->jumlah_pemasukan ?></td>
+                    <td><?= $masuk->username ?></td>
+
+                    <td>
+                        <div class="d-flex">
+                            <a class="btn btn-warning mr-3" href="/edit_pemasukan/<?= $masuk->id_pemasukan ?>">Edit</a>
+                            <form action="/delete_pemasukan/<?= $masuk->id_pemasukan ?>" method="post">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+            <?php $no++;
+            endforeach; ?>
         </tbody>
     </table>
-<div>
-<?= $this->endSection() ?>
+    <div>
+        <?= $this->endSection() ?>

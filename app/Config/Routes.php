@@ -51,6 +51,10 @@ $routes->delete('/delete_pengeluaran/(:num)', 'PengeluaranController::delete/$1'
 $routes->get('/nota', 'NotaController::index');
 $routes->get('/create_nota', 'NotaController::create');
 $routes->post('/store_nota', 'NotaController::store');
+$routes->get('/edit_nota/(:num)', 'NotaController::edit/$1');
+$routes->post('/update_nota/(:num)', 'NotaController::update/$1');
+$routes->delete('/delete_nota/(:num)', 'NotaController::delete/$1');
+
 // $routes->get('/index', 'Pages::index');
 // $routes->get('(:any)', 'Pages::view/$1');
 

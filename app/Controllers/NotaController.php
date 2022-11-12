@@ -49,16 +49,61 @@ class NotaController extends BaseController
             return redirect()->to('/nota');
         }
 
+        $total_tagihan = 'berat_orderan' * 3500;
+
         $data = [
             'nama_pelanggan' => $this->request->getPost('nama_pelanggan'),
             'jenis_pemasukan' => $this->request->getPost('jenis_pemasukan'),
             'berat_orderan' => $this->request->getPost('berat_orderan'),
+            'total_tagihan' => $total_tagihan,
             'delivery' => $this->request->getPost('delivery'),
 
             // 'cashier_id' => $this->request->getPost('cashier_id'),
         ];
         $this->notaModel->save($data);
 
+        return redirect()->to('/nota');
+    }
+
+    public function edit($id)
+    {
+        $nota = $this->notaModel->find($id);
+        // $pemasukan = $this->pemasukanModel->get_pemasukan_edit($id);
+        // $users = $this->usersModel->findAll();
+
+        $data = [
+            'title' => 'Edit Nota',
+            'nota' => $nota,
+            // 'users' => $users
+        ];
+
+        // return var_dump($data);
+        return view('nota/edit', $data);
+    }
+
+    public function update($id)
+    {
+        if (!$this->validate([
+            'nama_pelanggan' => 'required',
+            'jenis_pemasukan' => 'required|string',
+        ])) {
+            return redirect()->to('/edit_nota/'. $id);
+        }
+
+        $data = [
+            'tanggal_pemasukan' => $this->request->getVar('tanggal_pemasukan'),
+            'jumlah_pemasukan' => $this->request->getVar('jumlah_pemasukan'),
+        ];
+        $this->pemasukanModel->update($id, $data);
+
+        return redirect()->to('/pemasukan');
+    }
+
+
+
+    public function delete($id)
+    {
+        $this->notaModel->delete($id);
         return redirect()->to('/nota');
     }
 }
