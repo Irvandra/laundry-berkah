@@ -21,10 +21,10 @@
             <input type="text" name="berat_orderan" class="form-control" id="berat_orderan">
         </div>
 
-        <!-- <div class="custom-control custom-checkbox mb-3">
+        <div class="custom-control custom-checkbox mb-3">
             <input type="checkbox" class="custom-control-input" id="delivery">
             <label class="custom-control-label" for="delivery">Delivery</label>
-        </div> -->
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <div>

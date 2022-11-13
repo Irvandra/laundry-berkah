@@ -48,7 +48,7 @@ class NotaController extends BaseController
             return redirect()->to('/create_nota');
         }
         $berat_orderan = $this->request->getPost('berat_orderan');
-        $total_tagihan = $berat_orderan * 3500;
+        $total_tagihan = ($berat_orderan * 3500);
 
         $data = [
             'nama_pelanggan' => $this->request->getPost('nama_pelanggan'),
