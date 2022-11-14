@@ -19,17 +19,16 @@
             <?php $no = 1; foreach($nota as $nt) : ?>
             <tr>
                 <th scope="row"><?= $no ?></th>
-                <td><?= $nt->nama_pelanggan ?></td>
-                <td><?= $nt->berat_orderan?></td>
-                <td><?= $nt->delivery?></td>
-                <td><?= $nt->jumlah_pemasukan?></td>
-                <td><?= $nt->created_at?></td>
-                <td><?= $nt->status_order?></td>
-                
+                <td><?= $nt['nama_pelanggan'] ?></td>
+                <td><?= $nt['berat_order'] ?></td>
+                <td><?= $nt['delivery'] ?></td>
+                <td><?= $nt['total_tagihan'] ?></td>
+                <td><?= $nt['tanggal_order'] ?></td>
+                <td><?= $nt['status_order'] ?></td>
                 <td>
                     <div class="d-flex">
-                        <a class="btn btn-warning mr-3" href="/edit_nota/<?= $nt->id_orderan ?>">Edit</a>
-                        <form action="/delete_nota/<?= $nt->id_orderan ?>" method="post">
+                        <a class="btn btn-warning mr-3" href="/edit_nota/<?= $nt['id_order'] ?>">Edit</a>
+                        <form action="/delete_nota/<?= $nt['id_order'] ?>" method="post">
                         <input type="hidden" name="_method" value="DELETE">
                         <button type="submit" class="btn btn-danger">Delete</button>
                         </form>

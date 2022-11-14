@@ -16,14 +16,13 @@ class NotaController extends BaseController
 
     public function index()
     {
-        $nota = $this->notaModel->get_nota_list();
+        $nota = $this->notaModel->findAll();
 
         $data = [
             'title' => 'Nota',
             'nota' => $nota,
         ];
 
-        // return var_dump($data);
         return view('nota/list', $data);
     }
 
@@ -33,7 +32,6 @@ class NotaController extends BaseController
 
         $data = [
             'title' => 'Create Nota',
-            // 'users' => $users
         ];
 
         return view('nota/create', $data);
@@ -43,20 +41,21 @@ class NotaController extends BaseController
     {
         if (!$this->validate([
             'nama_pelanggan' => 'required',
-            // 'cashier_id' => 'required',
+            'berat_order' => 'required',
+            'tanggal_order' => 'required',
         ])) {
             return redirect()->to('/create_nota');
         }
-        $berat_orderan = $this->request->getPost('berat_orderan');
-        $total_tagihan = ($berat_orderan * 3500);
+        
+        $berat_order = $this->request->getPost('berat_order');
+        $total_tagihan = ($berat_order * 3500);
 
         $data = [
             'nama_pelanggan' => $this->request->getPost('nama_pelanggan'),
-            'berat_orderan' => $berat_orderan,
+            'berat_order' => $berat_order,
             'total_tagihan' => $total_tagihan,
+            'tanggal_order' => $this->request->getPost('tanggal_order'),
             'delivery' => $this->request->getPost('delivery'),
-
-            // 'cashier_id' => $this->request->getPost('cashier_id'),
         ];
         $this->notaModel->save($data);
 
@@ -66,16 +65,12 @@ class NotaController extends BaseController
     public function edit($id)
     {
         $nota = $this->notaModel->find($id);
-        // $pemasukan = $this->pemasukanModel->get_pemasukan_edit($id);
-        // $users = $this->usersModel->findAll();
 
         $data = [
             'title' => 'Edit Nota',
             'nota' => $nota,
-            // 'users' => $users
         ];
 
-        // return var_dump($data);
         return view('nota/edit', $data);
     }
 
@@ -83,15 +78,15 @@ class NotaController extends BaseController
     {
         if (!$this->validate([
             'nama_pelanggan' => 'required',
-            // 'jenis_pemasukan' => 'required|string',
+            'berat_order' => 'required',
+            'tanggal_order' => 'required',
         ])) {
             return redirect()->to('/edit_nota/'. $id);
         }
 
         $data = [
             'nama_pelanggan' => $this->request->getVar('nama_pelanggan'),
-            'berat_orderan' => $this->request->getVar('berat_orderan'),
-            // 'total_tagihan' => $this->request->getVar('total_tagihan'),
+            'berat_order' => $this->request->getVar('berat_order'),
             'delivery' => $this->request->getVar('delivery'),
         ];
         $this->notaModel->update($id, $data);

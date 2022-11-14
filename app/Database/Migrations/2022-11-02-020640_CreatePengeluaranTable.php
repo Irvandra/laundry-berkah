@@ -24,11 +24,11 @@ class CreatePengeluaranTable extends Migration
             ],
             'created_at' => [
                 'type'       => 'DATETIME',
-                'null'       => 'true',
+                'null'       => true,
             ],
             'updated_at' => [
                 'type'       => 'DATETIME',
-                'null'       => 'true',
+                'null'       => true,
             ],
             'employee_id' => [
                 'type'           => 'INT',

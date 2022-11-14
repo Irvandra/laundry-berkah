@@ -11,8 +11,8 @@
             <input type="text" name="jumlah_pemasukan" class="form-control" id="jumlah_pemasukan">
         </div>
         <div class="mb-3">
-            <label for="cashier_id" class="form-label">Nama Kasir</label>
-            <select name="cashier_id" class="form-control" aria-label="Default select example">
+            <label for="employee_id" class="form-label">Nama Kasir</label>
+            <select name="employee_id" class="form-control" aria-label="Default select example">
                 <option selected>Pilih Nama Kasir</option>
                 <?php $no = 1; foreach($users as $u) : ?>
                     <option value = <?= $u['id'] ?>><?= $u['username'] ?></option>

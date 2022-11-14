@@ -10,7 +10,7 @@ class Pemasukan extends Model
     protected $table            = 'pemasukan';
     protected $primaryKey       = 'id_pemasukan';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = ['tanggal_pemasukan', 'jumlah_pemasukan', 'cashier_id'];
+    protected $allowedFields    = ['tanggal_pemasukan', 'jumlah_pemasukan', 'employee_id'];
 
     // Dates
     protected $useTimestamps = true;
@@ -39,14 +39,14 @@ class Pemasukan extends Model
     public function get_pemasukan_list()
     {
         return $this->db->table('pemasukan')
-            ->join('users', 'pemasukan.cashier_id=users.id')
+            ->join('users', 'pemasukan.employee_id=users.id')
             ->get()->getResultObject();
     }
 
     public function get_pemasukan_edit($id)
     {
         return $this->db->table('pemasukan')
-            ->join('users', 'pemasukan.cashier_id=users.id')
+            ->join('users', 'pemasukan.employee_id=users.id')
             ->get()->getResult();
     }
 }

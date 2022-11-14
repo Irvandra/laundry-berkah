@@ -47,7 +47,7 @@ class PemasukanController extends BaseController
         if(!$this->validate([
             'tanggal_pemasukan' => 'required',
             'jumlah_pemasukan' => 'required|string',
-            'cashier_id' => 'required',
+            'employee_id' => 'required',
         ])) {
             return redirect()->to('/create_pemasukan');
         }
@@ -55,7 +55,7 @@ class PemasukanController extends BaseController
         $data = [
             'tanggal_pemasukan' => $this->request->getPost('tanggal_pemasukan'),
             'jumlah_pemasukan' => $this->request->getPost('jumlah_pemasukan'),
-            'cashier_id' => $this->request->getPost('cashier_id'),
+            'employee_id' => $this->request->getPost('employee_id'),
         ];
         $this->pemasukanModel->save($data);
 

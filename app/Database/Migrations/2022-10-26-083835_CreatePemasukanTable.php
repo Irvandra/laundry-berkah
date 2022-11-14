@@ -24,13 +24,13 @@ class CreatePemasukanTable extends Migration
             ],
             'created_at' => [
                 'type'       => 'DATETIME',
-                'null'       => 'true',
+                'null'       => true,
             ],
             'updated_at' => [
                 'type'       => 'DATETIME',
-                'null'       => 'true',
+                'null'       => true,
             ],
-            'cashier_id' => [
+            'employee_id' => [
                 'type'           => 'INT',
                 'constraint'     => 5,
                 'unsigned'       => true,
