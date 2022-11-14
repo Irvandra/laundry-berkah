@@ -53,7 +53,7 @@ class NotaController extends BaseController
         $data = [
             'nama_pelanggan' => $this->request->getPost('nama_pelanggan'),
             'berat_orderan' => $berat_orderan,
-            'total_tagihan' => $total_tagihan,
+            'jumlah_pemasukan' => $total_tagihan,
             'delivery' => $this->request->getPost('delivery'),
 
             // 'cashier_id' => $this->request->getPost('cashier_id'),

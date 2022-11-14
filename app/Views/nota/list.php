@@ -9,7 +9,7 @@
                 <th scope="col">Nama Pelanggan</th>
                 <th scope="col">Berat (Kg)</th>
                 <th scope="col">Delivery</th>
-                <th scope="col">Total Tagihan</th>
+                <th scope="col">Total Tagihan (Rp)</th>
                 <th scope="col">Tanggal Masuk</th>
                 <th scope="col">Status</th>
                 <th scope="col">Aksi</th>
