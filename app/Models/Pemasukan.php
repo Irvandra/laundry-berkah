@@ -36,17 +36,19 @@ class Pemasukan extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function get_pemasukan_list()
+    public function get_pemasukan($id = null)
     {
-        return $this->db->table('pemasukan')
+        if($id == null) {
+            $query = $this->db->table('pemasukan')
             ->join('users', 'pemasukan.employee_id=users.id')
             ->get()->getResultObject();
-    }
-
-    public function get_pemasukan_edit($id)
-    {
-        return $this->db->table('pemasukan')
+        } else {
+            $query = $this->db->table('pemasukan')
             ->join('users', 'pemasukan.employee_id=users.id')
-            ->get()->getResult();
+            ->where('id_pemasukan', $id)
+            ->get()->getResultObject();
+        }
+
+        return $query;
     }
 }

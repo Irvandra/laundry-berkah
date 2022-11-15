@@ -19,14 +19,13 @@ class PemasukanController extends BaseController
 
     public function index()
     {
-        $pemasukan = $this->pemasukanModel->get_pemasukan_list();
+        $pemasukan = $this->pemasukanModel->get_pemasukan();
 
         $data = [
             'title' => 'Pemasukan',
             'pemasukan' => $pemasukan,
         ];
 
-        // return var_dump($data);
         return view('pemasukan/list', $data);
     }
 
@@ -52,6 +51,8 @@ class PemasukanController extends BaseController
             return redirect()->to('/create_pemasukan');
         }
 
+        $this->pemasukanModel = new pemasukan();
+
         $data = [
             'tanggal_pemasukan' => $this->request->getPost('tanggal_pemasukan'),
             'jumlah_pemasukan' => $this->request->getPost('jumlah_pemasukan'),
@@ -64,17 +65,13 @@ class PemasukanController extends BaseController
 
     public function edit($id)
     {
-        $pemasukan = $this->pemasukanModel->find($id);
-        // $pemasukan = $this->pemasukanModel->get_pemasukan_edit($id);
-        // $users = $this->usersModel->findAll();
+        $pemasukan = $this->pemasukanModel->get_pemasukan($id);
 
         $data = [
             'title' => 'Edit Pemasukan',
             'pemasukan' => $pemasukan,
-            // 'users' => $users
         ];
 
-        // return var_dump($data);
         return view('pemasukan/edit', $data);
     }
 

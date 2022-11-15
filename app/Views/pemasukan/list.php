@@ -9,7 +9,7 @@
                 <th scope="col">ID Pemasukan</th>
                 <th scope="col">Tanggal</th>
                 <th scope="col">Jumlah</th>
-                <th scope="col">ID Kasir</th>
+                <th scope="col">Kasir</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -37,5 +37,5 @@
             endforeach; ?>
         </tbody>
     </table>
-    <div>
-        <?= $this->endSection() ?>
+<div>
+<?= $this->endSection() ?>
