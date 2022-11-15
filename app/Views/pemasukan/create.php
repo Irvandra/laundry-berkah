@@ -11,6 +11,10 @@
             <input type="text" name="jumlah_pemasukan" class="form-control" id="jumlah_pemasukan">
         </div>
         <div class="mb-3">
+            <label for="ket_pemasukan" class="form-label">Keterangan</label>
+            <input type="text" name="ket_pemasukan" class="form-control" id="ket_pemasukan">
+        </div>
+        <div class="mb-3">
             <label for="employee_id" class="form-label">Nama Kasir</label>
             <select name="employee_id" class="form-control" aria-label="Default select example">
                 <option selected>Pilih Nama Kasir</option>

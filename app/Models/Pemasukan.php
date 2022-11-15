@@ -10,7 +10,7 @@ class Pemasukan extends Model
     protected $table            = 'pemasukan';
     protected $primaryKey       = 'id_pemasukan';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = ['tanggal_pemasukan', 'jumlah_pemasukan', 'employee_id'];
+    protected $allowedFields    = ['tanggal_pemasukan', 'jumlah_pemasukan', 'employee_id', 'saldo', 'ket_pemasukan'];
 
     // Dates
     protected $useTimestamps = true;

@@ -5,10 +5,13 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">ID Pengelauran</th>
+                <th scope="col">No</th>
+                <th scope="col">ID Pengeluaran</th>
                 <th scope="col">Tanggal</th>
-                <th scope="col">Jumlah</th>
+                <th scope="col">Jumlah (Rp)</th>
+                <th scope="col">Saldo Kas (Rp)</th>
+                <th scope="col">Bukti Pengeluaran</th>
+                <th scope="col">Keterangan</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -19,6 +22,9 @@
                 <td><?= $keluar['id_pengeluaran'] ?></td>
                 <td><?= $keluar['tanggal_pengeluaran'] ?></td>
                 <td><?= $keluar['jumlah_pengeluaran'] ?></td>
+                <td><?= $keluar['saldo'] ?></td>
+                <td><?= $keluar['bukti_pengeluaran'] ?></td>
+                <td><?= $keluar['ket_pengeluaran'] ?></td>
                 <td>
                     <div class="d-flex">
                         <a class="btn btn-warning mr-3" href="/edit_pengeluaran/<?= $keluar['id_pengeluaran'] ?>">Edit</a>

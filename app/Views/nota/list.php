@@ -8,10 +8,8 @@
                 <th scope="col">#</th>
                 <th scope="col">Nama Pelanggan</th>
                 <th scope="col">Berat (Kg)</th>
-                <th scope="col">Delivery</th>
                 <th scope="col">Total Tagihan (Rp)</th>
                 <th scope="col">Tanggal Masuk</th>
-                <th scope="col">Status</th>
                 <th scope="col">Aksi</th>
             </tr>
         </thead>
@@ -21,10 +19,8 @@
                 <th scope="row"><?= $no ?></th>
                 <td><?= $nt['nama_pelanggan'] ?></td>
                 <td><?= $nt['berat_order'] ?></td>
-                <td><?= $nt['delivery'] ?></td>
                 <td><?= $nt['total_tagihan'] ?></td>
                 <td><?= $nt['tanggal_order'] ?></td>
-                <td><?= $nt['status_order'] ?></td>
                 <td>
                     <div class="d-flex">
                         <a class="btn btn-warning mr-3" href="/edit_nota/<?= $nt['id_order'] ?>">Edit</a>
