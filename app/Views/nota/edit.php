@@ -15,10 +15,10 @@
             <label for="tanggal_order" class="form-label">Tanggal</label>
             <input type="date" name="tanggal_order" class="form-control" id="tanggal_order" value="<?= $nota['tanggal_order'] ?>">
         </div>
-        <div class="custom-control custom-checkbox mb-3">
+        <!-- <div class="custom-control custom-checkbox mb-3">
             <input type="checkbox" class="custom-control-input" id="delivery" value="<?= $nota['delivery'] ?>">
             <label class="custom-control-label" for="delivery">Delivery</label>
-        </div>
+        </div> -->
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 <div>

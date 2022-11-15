@@ -10,7 +10,7 @@ class Pengeluaran extends Model
     protected $table            = 'pengeluaran';
     protected $primaryKey       = 'id_pengeluaran';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = ['tanggal_pengeluaran', 'jumlah_pengeluaran', 'employee_id'];
+    protected $allowedFields    = ['tanggal_pengeluaran', 'jumlah_pengeluaran','ket_pengeluaran','bukti_pengeluaran', 'saldo','employee_id'];
 
     // Dates
     protected $useTimestamps = true;

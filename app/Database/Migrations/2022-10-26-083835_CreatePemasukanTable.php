@@ -22,6 +22,14 @@ class CreatePemasukanTable extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
+            'saldo' => [
+                'type'       => 'INT',
+                'constraint' => '11',
+            ],
+            'ket_pemasukan' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
             'created_at' => [
                 'type'       => 'DATETIME',
                 'null'       => true,

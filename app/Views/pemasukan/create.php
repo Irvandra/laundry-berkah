@@ -13,6 +13,10 @@
         <div class="mb-3">
             <input type="hidden" name="employee_id" class="form-control" id="employee_id" value="<?= user_id() ?>">
         </div>
+        <div class="mb-3">
+            <label for="ket_pemasukan" class="form-label">Keterangan</label>
+            <input type="text" name="ket_pemasukan" class="form-control" id="ket_pemasukan">
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 <div>

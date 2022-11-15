@@ -22,6 +22,18 @@ class CreatePengeluaranTable extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
+            'saldo' => [
+                'type'       => 'INT',
+                'constraint' => '11',
+            ],
+            'bukti_pengeluaran' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
+            'ket_pengeluaran' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '255',
+            ],
             'created_at' => [
                 'type'       => 'DATETIME',
                 'null'       => true,

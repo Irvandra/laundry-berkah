@@ -56,6 +56,8 @@ class PemasukanController extends BaseController
         $data = [
             'tanggal_pemasukan' => $this->request->getPost('tanggal_pemasukan'),
             'jumlah_pemasukan' => $this->request->getPost('jumlah_pemasukan'),
+            'saldo' => $this->request->getPost('saldo'),
+            'ket_pemasukan' => $this->request->getPost('ket_pemasukan'),
             'employee_id' => $this->request->getPost('employee_id'),
         ];
         $this->pemasukanModel->save($data);
