@@ -15,7 +15,7 @@
         </div>
         <div class="mb-3">
             <label for="ket_pemasukan" class="form-label">Keterangan</label>
-            <input type="text" name="ket_pemasukan" class="form-control" id="ket_pemasukan">
+            <textarea type="text" name="ket_pemasukan" class="form-control" id="ket_pemasukan"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
