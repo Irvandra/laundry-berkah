@@ -83,10 +83,15 @@ class NotaController extends BaseController
         ])) {
             return redirect()->to('/edit_nota/'. $id);
         }
-
+        
+        $berat_order = $this->request->getVar('berat_order');
+        $total_tagihan = ($berat_order * 3500);
+        
         $data = [
             'nama_pelanggan' => $this->request->getVar('nama_pelanggan'),
-            'berat_order' => $this->request->getVar('berat_order'),
+            'berat_order' => $berat_order,
+            'total_tagihan' => $total_tagihan,
+            'tanggal_order' => $this->request->getVar('tanggal_order'),
             'delivery' => $this->request->getVar('delivery'),
         ];
         $this->notaModel->update($id, $data);
