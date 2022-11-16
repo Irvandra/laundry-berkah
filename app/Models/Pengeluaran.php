@@ -10,7 +10,7 @@ class Pengeluaran extends Model
     protected $table            = 'pengeluaran';
     protected $primaryKey       = 'id_pengeluaran';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = ['tanggal_pengeluaran', 'jumlah_pengeluaran','ket_pengeluaran','bukti_pengeluaran', 'saldo','employee_id'];
+    protected $allowedFields    = ['tanggal_pengeluaran', 'jumlah_pengeluaran','ket_pengeluaran','bukti_pengeluaran', 'employee_id'];
 
     // Dates
     protected $useTimestamps = true;
@@ -35,4 +35,20 @@ class Pengeluaran extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function get_pengeluaran($id = null)
+    {
+        if($id == null) {
+            $query = $this->db->table('pengeluaran')
+            ->join('users', 'pengeluaran.employee_id=users.id')
+            ->get()->getResultObject();
+        } else {
+            $query = $this->db->table('pengeluaran')
+            ->join('users', 'pengeluaran.employee_id=users.id')
+            ->where('id_pengeluaran', $id)
+            ->get()->getResultObject();
+        }
+
+        return $query;
+    }
 }

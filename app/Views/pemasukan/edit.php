@@ -11,6 +11,10 @@
             <input type="text" name="jumlah_pemasukan" class="form-control" id="jumlah_pemasukan" value="<?= $pemasukan[0]->jumlah_pemasukan ?>">
         </div>
         <div class="mb-3">
+            <label for="ket_pemasukan" class="form-label">Keterangan</label>
+            <textarea type="text" name="ket_pemasukan" class="form-control" id="ket_pemasukan"><?=  $pemasukan[0]->ket_pemasukan ?></textarea>
+        </div>
+        <div class="mb-3">
             <label for="employee_id" class="form-label">Kasir</label>
             <input type="text" name="employee_id" class="form-control" id="employee_id" value="<?=  $pemasukan[0]->username ?>" disabled>
         </div>

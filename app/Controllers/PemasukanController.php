@@ -51,15 +51,11 @@ class PemasukanController extends BaseController
             return redirect()->to('/create_pemasukan');
         }
 
-        $this->pemasukanModel = new pemasukan();
-
-        $sql = "SELECT SUM(jumlah_pemasukan) as saldo FROM pemasukan";
-        $sum = db_connect()->query($sql)->getRow();
+        $this->pemasukanModel = new Pemasukan();
 
         $data = [
             'tanggal_pemasukan' => $this->request->getPost('tanggal_pemasukan'),
             'jumlah_pemasukan' => $this->request->getPost('jumlah_pemasukan'),
-            'saldo' => $sum->saldo + $this->request->getPost('jumlah_pemasukan'),
             'ket_pemasukan' => $this->request->getPost('ket_pemasukan'),
             'employee_id' => $this->request->getPost('employee_id'),
         ];
@@ -92,6 +88,7 @@ class PemasukanController extends BaseController
         $data = [
             'tanggal_pemasukan' => $this->request->getVar('tanggal_pemasukan'),
             'jumlah_pemasukan' => $this->request->getVar('jumlah_pemasukan'),
+            'ket_pemasukan' => $this->request->getVar('ket_pemasukan'),
         ];
         $this->pemasukanModel->update($id, $data);
 

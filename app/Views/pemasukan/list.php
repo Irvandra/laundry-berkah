@@ -8,8 +8,7 @@
                 <th scope="col">No</th>
                 <th scope="col">Id Pemasukan</th>
                 <th scope="col">Tanggal</th>
-                <th scope="col">Jumlah</th>
-                <th scope="col">Saldo</th>
+                <th scope="col">Jumlah (Rp)</th>
                 <th scope="col">Keterangan</th>
                 <th scope="col">Kasir</th>
                 <th scope="col">Action</th>
@@ -23,15 +22,14 @@
                     <td><?= $masuk->id_pemasukan ?></td>
                     <td><?= $masuk->tanggal_pemasukan ?></td>
                     <td><?= $masuk->jumlah_pemasukan ?></td>
-                    <td><?= $masuk->saldo ?></td>
                     <td><?= $masuk->ket_pemasukan ?></td>                    
                     <td><?= $masuk->username ?></td>
                     <td>
                         <div class="d-flex">
-                            <a class="btn btn-warning mr-3" href="/edit_pemasukan/<?= $masuk->id_pemasukan ?>">Edit</a>
+                            <a class="btn btn-warning mr-3" href="/edit_pemasukan/<?= $masuk->id_pemasukan ?>"><i class="bi bi-pencil-square"></i></a>
                             <form action="/delete_pemasukan/<?= $masuk->id_pemasukan ?>" method="post">
                                 <input type="hidden" name="_method" value="DELETE">
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                             </form>
                         </div>
                     </td>

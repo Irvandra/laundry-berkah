@@ -11,11 +11,11 @@
             <input type="text" name="jumlah_pemasukan" class="form-control" id="jumlah_pemasukan">
         </div>
         <div class="mb-3">
-            <input type="hidden" name="employee_id" class="form-control" id="employee_id" value="<?= user_id() ?>">
-        </div>
-        <div class="mb-3">
             <label for="ket_pemasukan" class="form-label">Keterangan</label>
             <textarea type="text" name="ket_pemasukan" class="form-control" id="ket_pemasukan"></textarea>
+        </div>
+        <div class="mb-3">
+            <input type="hidden" name="employee_id" class="form-control" id="employee_id" value="<?= user_id() ?>">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

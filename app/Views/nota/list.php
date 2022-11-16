@@ -23,10 +23,10 @@
                 <td><?= $nt['tanggal_order'] ?></td>
                 <td>
                     <div class="d-flex">
-                        <a class="btn btn-warning mr-3" href="/edit_nota/<?= $nt['id_order'] ?>">Edit</a>
+                        <a class="btn btn-warning mr-3" href="/edit_nota/<?= $nt['id_order'] ?>"><i class="bi bi-pencil-square"></a>
                         <form action="/delete_nota/<?= $nt['id_order'] ?>" method="post">
                         <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></button>
                         </form>
                     </div>
                 </td>
