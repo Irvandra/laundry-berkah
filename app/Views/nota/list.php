@@ -5,7 +5,7 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">No</th>
                 <th scope="col">Nama Pelanggan</th>
                 <th scope="col">Berat (Kg)</th>
                 <th scope="col">Total Tagihan (Rp)</th>

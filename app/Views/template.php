@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="/assets/AdminLTE/plugins/fontawesome-free/css/all.min.css">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="/assets/AdminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- uPlot -->
+  <link rel="stylesheet" href="/assets/AdminLTE/plugins/uplot/uPlot.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/assets/AdminLTE/dist/css/adminlte.min.css">
   <!-- Icon style -->
@@ -196,6 +198,14 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
             <li class="nav-item">
+              <a href="/" class="nav-link">
+                <i class="nav-icon bi bi-cash-coin"></i>
+                <p>
+                  Dashboard
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="/nota" class="nav-link">
                 <i class="nav-icon bi bi-cash-coin"></i>
                 <p>
@@ -284,12 +294,97 @@
   <script src="/assets/AdminLTE/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="/assets/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- uPlot -->
+  <script src="/assets/AdminLTE/plugins/uplot/uPlot.iife.min.js"></script>
   <!-- overlayScrollbars -->
   <script src="/assets/AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
   <!-- AdminLTE App -->
   <script src="/assets/AdminLTE/dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="/assets/AdminLTE/dist/js/demo.js"></script>
+  <!-- Page specific script -->
+  <script>
+    $(function () {
+      /* uPlot
+      * -------
+      * Here we will create a few charts using uPlot
+      */
+
+      function getSize(elementId) {
+        return {
+          width: document.getElementById(elementId).offsetWidth,
+          height: document.getElementById(elementId).offsetHeight,
+        }
+      }
+
+      let data = [
+        [0, 1, 2, 3, 4, 5, 6],
+        [28, 48, 40, 19, 86, 27, 90],
+        [65, 59, 80, 81, 56, 55, 40]
+      ];
+
+      //--------------
+      //- AREA CHART -
+      //--------------
+
+      const optsAreaChart = {
+        ... getSize('areaChart'),
+        scales: {
+          x: {
+            time: false,
+          },
+          y: {
+            range: [0, 100],
+          },
+        },
+        series: [
+          {},
+          {
+            fill: 'rgba(60,141,188,0.7)',
+            stroke: 'rgba(60,141,188,1)',
+          },
+          {
+            stroke: '#c1c7d1',
+            fill: 'rgba(210, 214, 222, .7)',
+          },
+        ],
+      };
+
+      let areaChart = new uPlot(optsAreaChart, data, document.getElementById('areaChart'));
+
+      const optsLineChart = {
+        ... getSize('lineChart'),
+        scales: {
+          x: {
+            time: false,
+          },
+          y: {
+            range: [0, 100],
+          },
+        },
+        series: [
+          {},
+          {
+            fill: 'transparent',
+            width: 5,
+            stroke: 'rgba(60,141,188,1)',
+          },
+          {
+            stroke: '#c1c7d1',
+            width: 5,
+            fill: 'transparent',
+          },
+        ],
+      };
+
+      let lineChart = new uPlot(optsLineChart, data, document.getElementById('lineChart'));
+
+      window.addEventListener("resize", e => {
+        areaChart.setSize(getSize('areaChart'));
+        lineChart.setSize(getSize('lineChart'));
+      });
+    })
+  </script>
 </body>
 
 </html>

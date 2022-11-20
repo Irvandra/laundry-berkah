@@ -39,4 +39,10 @@ class Nota extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function count_order()
+    {
+        return $this->db->query('SELECT COUNT(*) as count_order FROM nota')
+            ->getRow();
+    }
 }

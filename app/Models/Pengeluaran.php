@@ -51,4 +51,16 @@ class Pengeluaran extends Model
 
         return $query;
     }
+
+    public function count_pengeluaran()
+    {
+        return $this->db->query('SELECT COUNT(*) as count_pengeluaran FROM pengeluaran')
+            ->getRow();
+    }
+
+    public function sum_pengeluaran()
+    {
+        return $this->db->query('SELECT SUM(jumlah_pengeluaran) as sum_pengeluaran FROM pengeluaran')
+            ->getRow();
+    }
 }

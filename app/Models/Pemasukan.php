@@ -51,4 +51,16 @@ class Pemasukan extends Model
 
         return $query;
     }
+
+    public function count_pemasukan()
+    {
+        return $this->db->query('SELECT COUNT(*) as count_pemasukan FROM pemasukan')
+            ->getRow();
+    }
+
+    public function sum_pemasukan()
+    {
+        return $this->db->query('SELECT SUM(jumlah_pemasukan) as sum_pemasukan FROM pemasukan')
+            ->getRow();
+    }
 }
