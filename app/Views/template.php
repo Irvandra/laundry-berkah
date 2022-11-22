@@ -118,7 +118,7 @@
             <!-- --- -->
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="bi bi-speedometer2 nav-icon"></i>
+                <i class="bi bi-speedometer2 nav-icon mr-2"></i>
                 <p>
                   DASHBOARD
                   <i class="fas fa-angle-left right"></i>
@@ -127,7 +127,7 @@
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="/" class="nav-link">
-                  <i class="bi bi-house mr-2"></i>
+                    <i class="bi bi-house ml-3 mr-2"></i>
                     <p>Dashboard</p>
                   </a>
                 </li>
@@ -138,7 +138,7 @@
 
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="bi bi-bank nav-icon"></i>
+                <i class="bi bi-bank nav-icon mr-2"></i>
                 <p>
                   KEUANGAN
                   <i class="fas fa-angle-left right"></i>
@@ -147,7 +147,7 @@
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="/nota" class="nav-link">
-                    <i class="bi bi-bag"></i>
+                    <i class="bi bi-bag ml-3 mr-2"></i>
                     <p>
                       Nota Order
                     </p>
@@ -155,7 +155,7 @@
                 </li>
                 <li class="nav-item">
                   <a href="/pemasukan" class="nav-link">
-                    <i class="bi bi-arrow-down"></i>
+                    <i class="bi bi-arrow-down ml-3 mr-2"></i>
                     <p>
                       Pemasukan
                     </p>
@@ -163,7 +163,7 @@
                 </li>
                 <li class="nav-item">
                   <a href="/pengeluaran" class="nav-link">
-                    <i class="bi bi-arrow-up"></i>
+                    <i class="bi bi-arrow-up ml-3 mr-2"></i>
                     <p>
                       Pengeluaran
                     </p>
@@ -178,7 +178,7 @@
             <li class="nav-header">KELUAR</li>
             <li class="nav-item">
               <a href="/logout" class="nav-link">
-                <i class="nav-icon bi bi-box-arrow-right"></i>
+                <i class="nav-icon bi bi-box-arrow-right ml-3 mr-2"></i>
                 <p>
                   Keluar
                 </p>

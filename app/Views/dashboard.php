@@ -70,7 +70,7 @@
       </div>
       <!-- /.row -->
       <!-- LINE CHART -->
-      <div class="card card-info">
+      <!-- <div class="card card-info">
         <div class="card-header">
           <h3 class="card-title">Line Chart</h3>
 
@@ -87,7 +87,7 @@
           <div class="chart">
             <div id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></div>
           </div>
-        </div>
+        </div> -->
         <!-- /.card-body -->
       </div>
       <!-- /.card -->
