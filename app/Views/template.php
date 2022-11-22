@@ -114,39 +114,68 @@
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
+
+            <!-- --- -->
             <li class="nav-item">
-              <a href="/" class="nav-link">
-                <i class="bi bi-house"></i>
+              <a href="#" class="nav-link">
+                <i class="bi bi-speedometer2 nav-icon"></i>
                 <p>
-                  Dashboard
+                  DASHBOARD
+                  <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="/" class="nav-link">
+                  <i class="bi bi-house mr-2"></i>
+                    <p>Dashboard</p>
+                  </a>
+                </li>
+              </ul>
             </li>
+            <!-- ---------------- -->
+
+
             <li class="nav-item">
-              <a href="/nota" class="nav-link">
-                <i class="bi bi-bag"></i>
+              <a href="#" class="nav-link">
+                <i class="bi bi-bank nav-icon"></i>
                 <p>
-                  Nota Order
+                  KEUANGAN
+                  <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
-            </li>
-            <li class="nav-item">
-              <a href="/pemasukan" class="nav-link">
-                <i class="bi bi-arrow-down"></i>
-                <p>
-                  Pemasukan
-                </p>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="/pengeluaran" class="nav-link">
-                <i class="bi bi-arrow-up"></i>
-                <p>
-                  Pengeluaran
-                </p>
-              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="/nota" class="nav-link">
+                    <i class="bi bi-bag"></i>
+                    <p>
+                      Nota Order
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/pemasukan" class="nav-link">
+                    <i class="bi bi-arrow-down"></i>
+                    <p>
+                      Pemasukan
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/pengeluaran" class="nav-link">
+                    <i class="bi bi-arrow-up"></i>
+                    <p>
+                      Pengeluaran
+                    </p>
+                  </a>
+                </li>
+              </ul>
             </li>
 
+            ----
+
+
+            <li class="nav-header">KELUAR</li>
             <li class="nav-item">
               <a href="/logout" class="nav-link">
                 <i class="nav-icon bi bi-box-arrow-right"></i>
