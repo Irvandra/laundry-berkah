@@ -116,6 +116,7 @@
             <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
 
             <!-- --- -->
+            <li class="nav-header">MENU</li>
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="bi bi-speedometer2 nav-icon mr-2"></i>
@@ -133,7 +134,6 @@
                 </li>
               </ul>
             </li>
-            <!-- ---------------- -->
 
 
             <li class="nav-item">
@@ -171,14 +171,10 @@
                 </li>
               </ul>
             </li>
-
-            ----
-
-
             <li class="nav-header">KELUAR</li>
             <li class="nav-item">
               <a href="/logout" class="nav-link">
-                <i class="nav-icon bi bi-box-arrow-right ml-3 mr-2"></i>
+                <i class="bi bi-box-arrow-right nav-icon mr-2"></i>
                 <p>
                   Keluar
                 </p>
