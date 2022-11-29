@@ -55,7 +55,6 @@ class NotaController extends BaseController
             'berat_order' => $berat_order,
             'total_tagihan' => $total_tagihan,
             'tanggal_order' => $this->request->getPost('tanggal_order'),
-            'delivery' => $this->request->getPost('delivery'),
         ];
         $this->notaModel->save($data);
 
@@ -92,7 +91,6 @@ class NotaController extends BaseController
             'berat_order' => $berat_order,
             'total_tagihan' => $total_tagihan,
             'tanggal_order' => $this->request->getVar('tanggal_order'),
-            'delivery' => $this->request->getVar('delivery'),
         ];
         $this->notaModel->update($id, $data);
 

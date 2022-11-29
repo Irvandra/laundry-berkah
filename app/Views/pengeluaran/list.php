@@ -1,7 +1,6 @@
 <?= $this->extend('template') ?>
 <?= $this->section('content') ?>
-<div class="p-4">
-
+<div class="ml-4 mr-4 mb-4">
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Riwayat Pengeluaran</h3>
@@ -17,7 +16,6 @@
                         <th scope="col">Tanggal</th>
                         <th scope="col">Jumlah (Rp)</th>
                         <th scope="col">Keterangan</th>
-                        <th scope="col">Bukti Pengeluaran</th>
                         <th scope="col">Petugas</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -31,7 +29,6 @@
                             <td><?= $keluar->tanggal_pengeluaran ?></td>
                             <td><?= $keluar->jumlah_pengeluaran ?></td>
                             <td><?= $keluar->ket_pengeluaran ?></td>
-                            <td><?= $keluar->bukti_pengeluaran ?></td>
                             <td><?= $keluar->username ?></td>
                             <td>
                                 <div class="d-flex">
@@ -49,4 +46,5 @@
             </table>
         </div>
     </div>
-    <?= $this->endSection() ?>
+</div>
+<?= $this->endSection() ?>

@@ -1,6 +1,6 @@
 <?= $this->extend('template') ?>
 <?= $this->section('content') ?>
-<div class="p-4">
+<div class="ml-4 mr-4 mb-4">
     <form action="/store_pemasukan" method="post">
         <div class="mb-3">
             <label for="tanggal_pemasukan" class="form-label">Tanggal</label>

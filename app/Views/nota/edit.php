@@ -1,6 +1,6 @@
 <?= $this->extend('template') ?>
 <?= $this->section('content') ?>
-<div class="p-4">
+<div class="ml-4 mr-4 mb-4">
     <!-- halaman tambah nota -->
     <form action="/update_nota/<?= $nota['id_order'] ?>" method="post">
         <div class="mb-3">

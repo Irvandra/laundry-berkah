@@ -1,6 +1,6 @@
 <?= $this->extend('template') ?>
 <?= $this->section('content') ?>
-<div class="p-4">
+<div class="ml-4 mr-4 mb-4">
     <form action="/update_pengeluaran/<?= $pengeluaran[0]->id_pengeluaran ?>" method="post">
         <div class="mb-3">
             <label for="tanggal_pengeluaran" class="form-label">Tanggal</label>
@@ -13,10 +13,6 @@
         <div class="mb-3">
             <label for="ket_pengeluaran" class="form-label">Keterangan</label>
             <textarea type="text" name="ket_pengeluaran" class="form-control" id="ket_pengeluaran"><?=  $pengeluaran[0]->ket_pengeluaran ?></textarea>
-        </div>
-        <div class="mb-3">
-            <label for="bukti_pengeluaran" class="form-label">Bukti Pengeluaran</label>
-            <input type="text" name="bukti_pengeluaran" class="form-control" id="bukti_pengeluaran" value="<?= $pengeluaran[0]->bukti_pengeluaran ?>">
         </div>
         <div class="mb-3">
             <label for="employee_id" class="form-label">Nama Petugas</label>

@@ -14,7 +14,7 @@ class Nota extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_order', 'nama_pelanggan', 'berat_order', 'total_tagihan', 'tanggal_order', 'delivery', 'status_order'];
+    protected $allowedFields    = ['id_order', 'nama_pelanggan', 'berat_order', 'total_tagihan', 'tanggal_order'];
 
     // Dates
     protected $useTimestamps = true;

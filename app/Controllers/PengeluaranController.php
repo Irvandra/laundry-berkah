@@ -58,7 +58,6 @@ class PengeluaranController extends BaseController
             'tanggal_pengeluaran' => $this->request->getPost('tanggal_pengeluaran'),
             'jumlah_pengeluaran' => $this->request->getPost('jumlah_pengeluaran'),
             'ket_pengeluaran' => $this->request->getPost('ket_pengeluaran'),
-            'bukti_pengeluaran' => $this->request->getPost('bukti_pengeluaran'),
             'employee_id' => $this->request->getPost('employee_id'),
         ];
         $this->pengeluaranModel->save($data);
@@ -92,7 +91,6 @@ class PengeluaranController extends BaseController
             'tanggal_pengeluaran' => $this->request->getVar('tanggal_pengeluaran'),
             'jumlah_pengeluaran' => $this->request->getVar('jumlah_pengeluaran'),
             'ket_pengeluaran' => $this->request->getVar('ket_pengeluaran'),
-            'bukti_pengeluaran' => $this->request->getVar('bukti_pengeluaran'),
         ];
         $this->pengeluaranModel->update($id, $data);
 
@@ -101,8 +99,7 @@ class PengeluaranController extends BaseController
 
     public function delete($id)
     {
-        $pengeluaranModel = new Pengeluaran();
-        $pengeluaranModel->delete($id);
+        $this->pengeluaranModel->delete($id);
         return redirect()->to('/pengeluaran');
     }
 }

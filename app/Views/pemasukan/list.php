@@ -1,7 +1,6 @@
 <?= $this->extend('template') ?>
 <?= $this->section('content') ?>
-<div class="p-4">
-
+<div class="ml-4 mr-4 mb-4">
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Riwayat Pemasukan</h3>
@@ -47,4 +46,5 @@
             </table>
         </div>
     </div>
-    <?= $this->endSection() ?>
+</div>
+<?= $this->endSection() ?>

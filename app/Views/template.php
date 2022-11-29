@@ -50,20 +50,10 @@
         <li class="nav-item">
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
-        <!-- <li class="nav-item d-none d-sm-inline-block">
-          <a href="/assets/AdminLTE/index3.html" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link">Contact</a>
-        </li> -->
       </ul>
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-
-
-        <!-- Messages Dropdown Menu -->
-
         <li class="nav-item">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">
             <i class="fas fa-expand-arrows-alt"></i>
@@ -98,49 +88,24 @@
           </div>
         </div>
 
-        <!-- SidebarSearch Form -->
-        <!-- <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      </div> -->
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
-
-            <!-- --- -->
+            <li class="nav-header">MENU</li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="bi bi-speedometer2 nav-icon mr-2"></i>
+              <a href="/" class="nav-link">
+                <i class="bi bi-house nav-icon mr-2"></i>
                 <p>
-                  DASHBOARD
-                  <i class="fas fa-angle-left right"></i>
+                  Dashboard
                 </p>
               </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="/" class="nav-link">
-                    <i class="bi bi-house ml-3 mr-2"></i>
-                    <p>Dashboard</p>
-                  </a>
-                </li>
-              </ul>
             </li>
-            <!-- ---------------- -->
-
-
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="bi bi-bank nav-icon mr-2"></i>
                 <p>
-                  KEUANGAN
+                  Keuangan
                   <i class="fas fa-angle-left right"></i>
                 </p>
               </a>
@@ -171,14 +136,10 @@
                 </li>
               </ul>
             </li>
-
-            ----
-
-
             <li class="nav-header">KELUAR</li>
             <li class="nav-item">
               <a href="/logout" class="nav-link">
-                <i class="nav-icon bi bi-box-arrow-right ml-3 mr-2"></i>
+                <i class="nav-icon bi bi-box-arrow-right mr-2"></i>
                 <p>
                   Keluar
                 </p>
@@ -199,13 +160,6 @@
           <div class="row mb-2">
             <div class="col-sm-6">
               <h1 class="ml-4"><?= $title; ?></h1>
-            </div>
-            <div class="col-sm-6">
-              <!-- <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Layout</a></li>
-                <li class="breadcrumb-item active">Fixed Layout</li>
-              </ol> -->
             </div>
           </div>
         </div><!-- /.container-fluid -->
@@ -248,87 +202,6 @@
   <script src="/assets/AdminLTE/dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="/assets/AdminLTE/dist/js/demo.js"></script>
-  <!-- Page specific script -->
-  <script>
-    $(function() {
-      /* uPlot
-       * -------
-       * Here we will create a few charts using uPlot
-       */
-
-      function getSize(elementId) {
-        return {
-          width: document.getElementById(elementId).offsetWidth,
-          height: document.getElementById(elementId).offsetHeight,
-        }
-      }
-
-      let data = [
-        [0, 1, 2, 3, 4, 5, 6],
-        [28, 48, 40, 19, 86, 27, 90],
-        [65, 59, 80, 81, 56, 55, 40]
-      ];
-
-      //--------------
-      //- AREA CHART -
-      //--------------
-
-      const optsAreaChart = {
-        ...getSize('areaChart'),
-        scales: {
-          x: {
-            time: false,
-          },
-          y: {
-            range: [0, 100],
-          },
-        },
-        series: [{},
-          {
-            fill: 'rgba(60,141,188,0.7)',
-            stroke: 'rgba(60,141,188,1)',
-          },
-          {
-            stroke: '#c1c7d1',
-            fill: 'rgba(210, 214, 222, .7)',
-          },
-        ],
-      };
-
-      let areaChart = new uPlot(optsAreaChart, data, document.getElementById('areaChart'));
-
-      const optsLineChart = {
-        ...getSize('lineChart'),
-        scales: {
-          x: {
-            time: false,
-          },
-          y: {
-            range: [0, 100],
-          },
-        },
-        series: [{},
-          {
-            fill: 'transparent',
-            width: 5,
-            stroke: 'rgba(60,141,188,1)',
-          },
-          {
-            stroke: '#c1c7d1',
-            width: 5,
-            fill: 'transparent',
-          },
-        ],
-      };
-
-      let lineChart = new uPlot(optsLineChart, data, document.getElementById('lineChart'));
-
-      window.addEventListener("resize", e => {
-        areaChart.setSize(getSize('areaChart'));
-        lineChart.setSize(getSize('lineChart'));
-      });
-    })
-  </script>
 </body>
 
 </html>

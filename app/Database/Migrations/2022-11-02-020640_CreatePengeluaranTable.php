@@ -26,10 +26,6 @@ class CreatePengeluaranTable extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '255',
             ],
-            'bukti_pengeluaran' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '255',
-            ],
             'created_at' => [
                 'type'       => 'DATETIME',
                 'null'       => true,

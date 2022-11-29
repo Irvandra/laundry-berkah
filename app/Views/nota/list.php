@@ -1,11 +1,9 @@
 <?= $this->extend('template') ?>
 <?= $this->section('content') ?>
-<div class="p-4">
-
-
+<div class="ml-4 mr-4 mb-4">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Data Orderan Masuk</h3>
+            <h3 class="card-title">Data Nota Order</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -46,4 +44,5 @@
             </table>
         </div>
     </div>
-    <?= $this->endSection() ?>
+</div>
+<?= $this->endSection() ?>

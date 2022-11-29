@@ -30,15 +30,6 @@ class CreateNotaTable extends Migration
             'tanggal_order' => [
                 'type'       => 'DATE',
             ],
-            'delivery' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '5',
-                'null'       => true,
-            ],
-            'status_order' => [
-                'type'       => 'VARCHAR',
-                'constraint' => '10',
-            ],
             'created_at' => [
                 'type'       => 'DATETIME',
                 'null'       => 'true',
